@@ -1,27 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathan Guzman | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Diego Zuniga</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .alt-navbar {
+      padding: 0.75rem 0;
+      margin-bottom: 0;
+      background: #0f172a;
+    }
+
+    .alt-navbar .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      color: #60a5fa;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: #f8fafc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a.active {
+      color: #60a5fa;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #f8fafc;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #1e293b;
+        padding: 1rem;
+        position: absolute;
+        top: 60px;
+        right: 2rem;
+        border-radius: 8px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="hero">
-        <img src="headshot.jpg" alt="Jonathan Guzman" class="profile-pic">
-        <h1>Jonathan Guzman</h1>
-        <p>Computer Science Major | Aspiring Software Engineer</p>
-    </section>
+  <!-- Header / Navbar -->
+  <header class="alt-navbar">
+    <div class="wrapper">
+      <h1 class="logo">&gt; Diego</h1>
+
+      <!-- Hamburger icon -->
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-flex">
+    <div class="hero-left">
+      <h2>Hello I'm <span class="highlight">Diego</span></h2>
+      <h3>Electrical Engineer</h3>
+      <p>
+        I’m a senior Electrical Engineering student at the University of Indianapolis. As a proud member of IEEE, I’ve developed hands-on skills in circuit design, embedded systems, and programming using Verilog, C++, and MATLAB. I thrive in collaborative environments and enjoy solving practical engineering problems that make a real-world impact.
+      </p>
+      <div class="hero-buttons">
+        <a href="Resume.pdf" download="Diego_Zuniga_Resume.pdf" class="btn-resume">Download Resume</a>
+        <div class="hero-icons">
+          <a href="https://github.com/DiegoZuniga0" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/diego-zuniga-" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Image -->
+    <div class="hero-right">
+      <div class="photo-ring-blue">
+        <img src="IMG_3646.JPG" alt="Diego Zuniga" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <div class="hero-stats">
+    <div>
+      <span>4</span>
+      Years of Experience
+    </div>
+    <div>
+      <span>5</span>
+      Projects Completed
+    </div>
+    <div>
+      <span>1</span>
+      Research Completed
+    </div>
+  </div>
+
+  <!-- Hamburger JS -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
+Diego Zuniga / Electrical Engineering
+R.B.Annis School of Engineering / University of Indianapolis
+1400 E. Hanna Ave / Indianapolis, IN 46227
+Cell: 708-228-0739
+zunigad@uindy.edu
