@@ -1,41 +1,249 @@
-/* ========== styles.css ========== */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #0f172a, #1e3a8a);
+  color: #f8fafc;
+  line-height: 1.8;
+  font-size: 27px;
+  overflow-x: hidden;
 }
 
-header {
-    background: #333;
-    color: white;
-    padding: 15px 0;
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.alt-navbar {
+  background: transparent;
+  padding: 0.5rem 0;
+  position: relative;
+  z-index: 100;
+}
+
+.alt-navbar .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  color: #3b82f6;
+  font-size: 3.5rem;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  transition: 0.2s;
 }
 
-.hero {
-    padding: 50px;
+nav ul li a.active,
+nav ul li a:hover {
+  color: #38bdf8;
 }
 
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #333;
+.hire-btn {
+  background: #3b82f6;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
 }
+
+/* === Hamburger Styles === */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #3b82f6;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #1e293b;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    width: 200px;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* === Other styles remain unchanged === */
+.hero-flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  padding: 1rem 4rem;
+  box-sizing: border-box;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-left h2 {
+  font-size: 4.5rem;
+  margin: 0.5rem 0;
+  color: #f8fafc;
+}
+
+.hero-left .highlight {
+  color: #3b82f6;
+}
+
+.hero-left h3 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  color: #cbd5e1;
+}
+
+.hero-left p {
+  font-size: 1.7rem;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-resume {
+  padding: 0.75rem 2rem;
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  font-weight: bold;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-resume:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.hero-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-icons a img {
+  width: 32px;
+  height: 32px;
+  filter: invert(38%) sepia(96%) saturate(1266%) hue-rotate(200deg) brightness(95%) contrast(101%);
+  transition: transform 0.3s ease;
+}
+
+.hero-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-ring-blue {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-ring-blue img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 1.8rem;
+  color: #f8fafc;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.hero-stats span {
+  font-size: 3rem;
+  color: #38bdf8;
+  display: block;
+}
+
+.section, .section-alt {
+  padding: 5rem 2rem;
+}
+
+.section h2, .section-alt h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #f8fafc;
+}
+
+.section p, .section-alt p {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+}
+
+.section-alt {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+Diego Zuniga / Electrical Engineering
+R.B.Annis School of Engineering / University of Indianapolis
+1400 E. Hanna Ave / Indianapolis, IN 46227
+Cell: 708-228-0739
+zunigad@uindy.edu
